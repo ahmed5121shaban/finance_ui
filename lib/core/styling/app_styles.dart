@@ -12,6 +12,20 @@ class AppStyles {
     fontFamily: AppFonts.mainFont,
   );
 
+  static final TextStyle black18w600 = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.black,
+    fontFamily: AppFonts.mainFont,
+  );
+
+  static final TextStyle gray12w500 = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.gray,
+    fontFamily: AppFonts.mainFont,
+  );
+
   static final TextStyle subtitlesStyle = TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeight.w500,

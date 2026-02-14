@@ -1,3 +1,5 @@
+import 'package:finance_ui/core/screens/home-screen.dart';
+import 'package:finance_ui/core/styling/app-assets.dart';
 import 'package:finance_ui/core/styling/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -10,74 +12,65 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  List< Widget> screens = [
+  List<Widget> screens = [
+    HomeScreen(),
     Container(
       height: double.infinity,
       width: double.infinity,
-      color: Colors.blueAccent,
-      child: Center(
-        child: Text("Home",
-        style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-        ),
-        ),
-      ),
-    ),
-    Container(
-       height: double.infinity,
-      width: double.infinity,
       color: Colors.greenAccent,
       child: Center(
-        child: Text("Business",
-        style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-        ),
+        child: Text(
+          "Business",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
         ),
       ),
     ),
     Container(
-       height: double.infinity,
+      height: double.infinity,
       width: double.infinity,
       color: Colors.amberAccent,
       child: Center(
-        child: Text("School",
-        style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-        ),
+        child: Text(
+          "School",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
         ),
       ),
     ),
     Container(
-       height: double.infinity,
+      height: double.infinity,
       width: double.infinity,
       color: Colors.greenAccent,
       child: Center(
-        child: Text("Business",
-        style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-        ),
+        child: Text(
+          "Business",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
         ),
       ),
     ),
     Container(
-       height: double.infinity,
+      height: double.infinity,
       width: double.infinity,
       color: Colors.amberAccent,
       child: Center(
-        child: Text("School",
-        style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-        ),
+        child: Text(
+          "School",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
         ),
       ),
     ),
@@ -87,6 +80,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        // type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         onTap: (index) {
           setState(() {
@@ -95,13 +89,13 @@ class _MainScreenState extends State<MainScreen> {
         },
         items: [
           BottomNavigationBarItem(
-            icon: SvgPicture.asset("assets/images/home.svg"),
-            label: "Home"
-            ),
+            icon: SvgPicture.asset(AppAssets.home),
+            label: "Home",
+          ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset("assets/images/chart.svg"),
-            label: "Business"
-            ),
+            icon: SvgPicture.asset(AppAssets.chart),
+            label: "Business",
+          ),
           BottomNavigationBarItem(
             icon: Container(
               height: 24,
@@ -110,25 +104,26 @@ class _MainScreenState extends State<MainScreen> {
                 color: AppColors.primary,
                 borderRadius: BorderRadius.circular(50),
               ),
-              child: SvgPicture.asset("assets/images/vector.svg")),
-            label: "School"
+              child: SvgPicture.asset(AppAssets.vector),
             ),
-             BottomNavigationBarItem(
-            icon: SvgPicture.asset("assets/images/wallet.svg"),
-            label: "Business"
-            ),
+            label: "School",
+          ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset("assets/images/profile.svg"),
-            label: "School"
-            ),
+            icon: SvgPicture.asset(AppAssets.wallet),
+            label: "Business",
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(AppAssets.profile),
+            label: "School",
+          ),
         ],
       ),
       body: Container(
         width: double.infinity,
-        child: Center(
-          child: screens[_selectedIndex],
-        ),
+        child: Center(child: screens[_selectedIndex]),
       ),
     );
   }
 }
+
+

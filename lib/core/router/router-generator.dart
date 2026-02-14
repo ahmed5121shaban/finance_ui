@@ -1,7 +1,7 @@
 import 'package:finance_ui/core/router/router-paths.dart';
 import 'package:finance_ui/core/screens/create-new-password-screen.dart';
 import 'package:finance_ui/core/screens/forgot-password-screen.dart';
-import 'package:finance_ui/core/screens/home-screen.dart';
+import 'package:finance_ui/core/screens/on-boarding-screen.dart';
 import 'package:finance_ui/core/screens/login-screen.dart';
 import 'package:finance_ui/core/screens/main-screen.dart';
 import 'package:finance_ui/core/screens/not-found-screen.dart';
@@ -14,11 +14,11 @@ import 'package:go_router/go_router.dart';
 class RouterGenerator {
   static GoRouter generateRoute = GoRouter(
     errorBuilder: (context, state) => const NotFoundScreen(),
-    initialLocation: RouterPaths.home,
+    initialLocation: RouterPaths.onBoarding,
     routes: [
       GoRoute(
-        path: RouterPaths.home,
-        builder: (context, state) => const HomeScreen(),
+        path: RouterPaths.onBoarding,
+        builder: (context, state) => const OnBoardingScreen(),
       ),
       GoRoute(
         path: RouterPaths.login,

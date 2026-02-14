@@ -1,67 +1,65 @@
-import 'package:finance_ui/core/router/router-paths.dart';
 import 'package:finance_ui/core/styling/app-assets.dart';
+import 'package:finance_ui/core/styling/app_colors.dart';
 import 'package:finance_ui/core/styling/app_styles.dart';
-import 'package:finance_ui/core/widgets/buttons/primary-button.dart';
-import 'package:finance_ui/core/widgets/buttons/secondry-button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                AppAssets.onBoardingImage,
-                width: 375.w,
-                height: 570.h,
-                fit: BoxFit.cover,
-              ),
-              SizedBox(height: 16.h),
-              PrimaryButton(
-                text: "Login",
-                onPressed: () => GoRouter.of(context).push(RouterPaths.login),
-                width: 331.w,
-                height: 56.h,
-                radius: 8.r,
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w600,
-              ),
-              SizedBox(height: 16.h),
-              SecondryButton(
-                text: "Register",
-                onPressed: () =>
-                    GoRouter.of(context).push(RouterPaths.register),
-                width: 331.w,
-                height: 56.h,
-                radius: 8.r,
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w600,
-              ),
-              SizedBox(height: 25.h),
-              _guestButton(context),
-            ],
-          ),
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.only(left: 22, right: 22, top: 18),
+        child: Column(
+          children: [
+            _homeScreenHeader(context),
+          ],
         ),
       ),
     );
   }
 }
 
-InkWell _guestButton(BuildContext context) {
-  return InkWell(
-    overlayColor: WidgetStateProperty.all(Colors.transparent),
-    onTap: () => GoRouter.of(context).push(RouterPaths.screens),
-    child: Text(
-      "Continue as a guest",
-      style: AppStyles.black15w700underline,
+Widget _homeScreenHeader(BuildContext context) {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      Row(
+        spacing: 10.w,
+        children: [
+          _headChape(context, AppAssets.google),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("Welcome back,", style: AppStyles.gray12w500),
+              Text("John Doe", style: AppStyles.black18w600),
+            ],
+          ),
+        ],
+      ),
+      _headChape(context, AppAssets.wallet),
+    ],
+  );
+}
+
+Container _headChape(BuildContext context, String asset) {
+  return Container(
+    width: 41.w,
+    height: 41.h,
+    decoration: BoxDecoration(
+      color: Colors.transparent,
+      borderRadius: BorderRadius.circular(12.r),
+      border: Border.all(color: AppColors.textFieldBorderColor),
     ),
+    child: SvgPicture.asset(width: 48.w, height: 48.h, asset),
   );
 }
