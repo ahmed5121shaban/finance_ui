@@ -68,6 +68,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                     controller: textEditingController,
                     onCompleted: (v) {
                       print("Completed");
+                      currentText = v;
                     },
                     onChanged: (value) {
                       print(value);
@@ -84,7 +85,13 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                   PrimaryButton(
                     text: "Verify",
                     onPressed: () {
-                      if (_formKey.currentState!.validate()) {}
+                      if (_formKey.currentState!.validate()) {
+                        if(currentText == "1234"){
+                          GoRouter.of(context).push(RouterPaths.main);
+                        }else{
+                          errorController.add(ErrorAnimationType.shake);
+                        }
+                      }
                     },
                   ),
                   SizedBox(height: 350.h),

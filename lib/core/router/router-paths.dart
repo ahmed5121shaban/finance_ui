@@ -7,4 +7,5 @@ class RouterPaths {
   static const String createNewPassword = "/createNewPassword";
   static const String passwordChanged = "/passwordChanged";
   static const String otpVerification = "/otpVerification";
+  static const String screens = "/screens";
 }

@@ -1,6 +1,5 @@
 import 'package:finance_ui/core/router/router-paths.dart';
 import 'package:finance_ui/core/styling/app-assets.dart';
-import 'package:finance_ui/core/styling/app_colors.dart';
 import 'package:finance_ui/core/styling/app_styles.dart';
 import 'package:finance_ui/core/widgets/buttons/primary-button.dart';
 import 'package:finance_ui/core/widgets/buttons/secondry-button.dart';
@@ -59,7 +58,7 @@ class HomeScreen extends StatelessWidget {
 InkWell _guestButton(BuildContext context) {
   return InkWell(
     overlayColor: WidgetStateProperty.all(Colors.transparent),
-    onTap: () => GoRouter.of(context).push(RouterPaths.main),
+    onTap: () => GoRouter.of(context).push(RouterPaths.screens),
     child: Text(
       "Continue as a guest",
       style: AppStyles.black15w700underline,
