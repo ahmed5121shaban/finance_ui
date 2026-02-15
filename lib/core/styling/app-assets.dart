@@ -9,7 +9,10 @@ class AppAssets {
   static const String chart = "assets/images/chart.svg";
   static const String wallet = "assets/images/wallet.svg";
   static const String profile = "assets/images/profile.svg";
+  static const String profileImage = "assets/images/profile.jpg";
   static const String notification = "assets/images/notification.svg";
   static const String search = "assets/images/search.svg";
   static const String setting = "assets/images/setting.svg";
+  static final String layer1 = "assets/images/layer1.png"; 
+  static final String layer2 = "assets/images/layer2.png"; 
 }

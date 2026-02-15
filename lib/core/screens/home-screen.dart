@@ -1,6 +1,7 @@
 import 'package:finance_ui/core/styling/app-assets.dart';
 import 'package:finance_ui/core/styling/app_colors.dart';
 import 'package:finance_ui/core/styling/app_styles.dart';
+import 'package:finance_ui/core/widgets/carousal/carousal-widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -22,6 +23,8 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             _homeScreenHeader(context),
+            SizedBox(height: 20.h),
+            _carousalWidget(),
           ],
         ),
       ),
@@ -36,30 +39,35 @@ Widget _homeScreenHeader(BuildContext context) {
       Row(
         spacing: 10.w,
         children: [
-          _headChape(context, AppAssets.google),
+          ClipOval(
+            child: Image.asset(width: 48.w, height: 48.h, AppAssets.profileImage,fit: BoxFit.fill,)
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text("Welcome back,", style: AppStyles.gray12w500),
-              Text("John Doe", style: AppStyles.black18w600),
+              Text("Ahmed Shaban", style: AppStyles.black18w600),
             ],
           ),
         ],
       ),
-      _headChape(context, AppAssets.wallet),
+      Container(
+        width: 48.w,
+        height: 48.h,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(50),
+          border: Border.all(color: AppColors.lightGray),
+        ),
+        child: Center(
+          child: SvgPicture.asset(width: 20.w, height: 17.h, AppAssets.notification),
+        )
+      ),
     ],
   );
 }
 
-Container _headChape(BuildContext context, String asset) {
+Widget _carousalWidget() {
   return Container(
-    width: 41.w,
-    height: 41.h,
-    decoration: BoxDecoration(
-      color: Colors.transparent,
-      borderRadius: BorderRadius.circular(12.r),
-      border: Border.all(color: AppColors.textFieldBorderColor),
-    ),
-    child: SvgPicture.asset(width: 48.w, height: 48.h, asset),
+    child: AppCarousalWidget(),
   );
 }

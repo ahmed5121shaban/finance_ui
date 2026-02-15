@@ -32,18 +32,21 @@ class AppStyles {
     color: AppColors.secondary,
     fontFamily: AppFonts.mainFont,
   );
+
   static final TextStyle mainTitle = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeight.w600,
     color: AppColors.black,
     fontFamily: AppFonts.mainFont,
   );
+
   static final TextStyle bodyMain = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeight.w600,
     color: AppColors.black,
     fontFamily: AppFonts.mainFont,
   );
+
   static final TextStyle bodySecondary = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeight.w500,
@@ -99,16 +102,26 @@ class AppStyles {
     color: AppColors.primary,
     decoration: TextDecoration.underline,
   );
+
   static final TextStyle primary26w700 = TextStyle(
     fontSize: 26.sp,
     fontWeight: FontWeight.w700,
     color: AppColors.primary,
     fontFamily: AppFonts.mainFont,
   );
+
   static final TextStyle secondary15w500 = TextStyle(
     fontSize: 15.sp,
     fontWeight: FontWeight.w500,
     color: AppColors.secondary,
     fontFamily: AppFonts.mainFont,
   );
+
+  static final TextStyle cardTitle = TextStyle(
+    fontWeight: FontWeight.w600,
+    fontFamily: AppFonts.mainFont,
+    fontSize: 24.sp,
+    color: AppColors.white
+  );
+
 }

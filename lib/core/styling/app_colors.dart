@@ -12,4 +12,5 @@ class AppColors {
   static final Color darkGray = const Color(0xff6A707C); 
   static final Color error = const Color.fromARGB(255, 151, 1, 1);
   static final Color lightGray = const Color(0xffF7F8F9);
+  static final Color carousalPrimaryColor = const Color(0xff6981fd);
 }
