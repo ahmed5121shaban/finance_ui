@@ -29,6 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
             _carousalWidget(),
             SizedBox(height: 20.h),
             Column(
+              spacing: 10.w,
               children: [
                 Row(
                   spacing: 10.w,

@@ -25,22 +25,28 @@ class HomeCardWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(color: AppColors.lightGray),
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              color: AppColors.primaryLight,
-              borderRadius: BorderRadius.circular(12.r),
+      child: Padding(
+        padding: EdgeInsets.only(top: 7.r, bottom: 7.r),
+        child: Column(
+          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          spacing: 8.h,
+          children: [
+            Container(
+              width: 48.w,
+              height: 48.h,
+              decoration: BoxDecoration(
+                color: AppColors.primaryLight,
+                borderRadius: BorderRadius.circular(12.r),
+              ),
+              child: Center(
+                child: SvgPicture.asset(icon),
+              ),
             ),
-            child: Center(
-              child: SvgPicture.asset(icon),
-            ),
-          ),
-          Text(title, style: AppStyles.bodyMain),
-          Text(subtitle, style: AppStyles.gray12w500),
-        ],
+            Text(title, style: AppStyles.bodyMain),
+            Text(subtitle, style: AppStyles.gray12w500),
+          ],
+        ),
       ),
     );
   }
