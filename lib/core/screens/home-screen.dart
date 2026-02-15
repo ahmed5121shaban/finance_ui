@@ -1,6 +1,8 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:finance_ui/core/styling/app-assets.dart';
 import 'package:finance_ui/core/styling/app_colors.dart';
 import 'package:finance_ui/core/styling/app_styles.dart';
+import 'package:finance_ui/core/widgets/cards/home-card.dart';
 import 'package:finance_ui/core/widgets/carousal/carousal-widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,6 +27,26 @@ class _HomeScreenState extends State<HomeScreen> {
             _homeScreenHeader(context),
             SizedBox(height: 20.h),
             _carousalWidget(),
+            SizedBox(height: 20.h),
+            Column(
+              children: [
+                Row(
+                  spacing: 10.w,
+                  children: [
+                    _homeCards(AppAssets.sendMony, "Send money", "Take acc to acc"),
+                    _homeCards(AppAssets.walletHome, "Pay the bill", "Lorem ipsum"),
+                  ],
+                ),
+                Row(
+                  spacing: 10.w,
+                  children: [
+                    _homeCards(AppAssets.sendMony, "Request", "Lorem ipsum"),
+                    _homeCards(AppAssets.humans, "Contact", "Lorem ipsum"),
+                  ],
+                ),
+              ],
+            ),
+            
           ],
         ),
       ),
@@ -67,7 +89,9 @@ Widget _homeScreenHeader(BuildContext context) {
 }
 
 Widget _carousalWidget() {
-  return Container(
-    child: AppCarousalWidget(),
-  );
+  return AppCarousalWidget();
+}
+
+Widget _homeCards(String icon,String title,String subtitle){
+  return HomeCardWidget(icon: icon, title: title, subtitle: subtitle);
 }

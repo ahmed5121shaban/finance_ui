@@ -15,4 +15,7 @@ class AppAssets {
   static const String setting = "assets/images/setting.svg";
   static final String layer1 = "assets/images/layer1.png"; 
   static final String layer2 = "assets/images/layer2.png"; 
+  static const String humans = "assets/images/humans.svg";
+  static const String sendMony = "assets/images/send-mony.svg";
+  static const String walletHome = "assets/images/wallet-home.svg";
 }

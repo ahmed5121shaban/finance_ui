@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   static final Color primary = const Color(0xff617AFD);
+  static final Color primaryLight = const Color(0xffECF1F6);
   static final Color secondary = const Color(0xff8391A1);
   static final Color gray = const Color(0xff9CA4AB);
   static final Color black = const Color(0xff1F2C37);
@@ -13,4 +14,6 @@ class AppColors {
   static final Color error = const Color.fromARGB(255, 151, 1, 1);
   static final Color lightGray = const Color(0xffF7F8F9);
   static final Color carousalPrimaryColor = const Color(0xff6981fd);
+  static final Color grayWhite = const Color(0xffFDFDFD);
+  static final Color grayBlack = const Color(0xff123333);
 }

@@ -124,4 +124,24 @@ class AppStyles {
     color: AppColors.white
   );
 
+  static final TextStyle cardBody = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.grayWhite,
+    fontFamily: AppFonts.mainFont,
+  );
+
+  static final TextStyle white12w700 = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.white,
+    fontFamily: AppFonts.mainFont,
+  );
+  static final TextStyle white16w500 = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.white,
+    fontFamily: AppFonts.mainFont,
+  );
+
 }
