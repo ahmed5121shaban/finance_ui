@@ -18,4 +18,7 @@ class AppAssets {
   static const String humans = "assets/images/humans.svg";
   static const String sendMony = "assets/images/send-mony.svg";
   static const String walletHome = "assets/images/wallet-home.svg";
+  static const String leftArrow = "assets/images/left-arrow.svg";
+  static const String dot = "assets/images/dot.svg";
+  static const String visa = "assets/images/visa.svg";
 }

@@ -7,7 +7,6 @@ import 'package:finance_ui/core/widgets/carousal/carousal-widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,35 +19,37 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.only(left: 22, right: 22, top: 18),
-        child: Column(
-          children: [
-            _homeScreenHeader(context),
-            SizedBox(height: 20.h),
-            _carousalWidget(),
-            SizedBox(height: 20.h),
-            Column(
-              spacing: 10.w,
-              children: [
-                Row(
-                  spacing: 10.w,
-                  children: [
-                    _homeCards(AppAssets.sendMony, "Send money", "Take acc to acc"),
-                    _homeCards(AppAssets.walletHome, "Pay the bill", "Lorem ipsum"),
-                  ],
-                ),
-                Row(
-                  spacing: 10.w,
-                  children: [
-                    _homeCards(AppAssets.sendMony, "Request", "Lorem ipsum"),
-                    _homeCards(AppAssets.humans, "Contact", "Lorem ipsum"),
-                  ],
-                ),
-              ],
-            ),
-            
-          ],
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 22, right: 22, top: 18),
+          child: Column(
+            children: [
+              _homeScreenHeader(context),
+              SizedBox(height: 20.h),
+              _carousalWidget(),
+              SizedBox(height: 20.h),
+              Column(
+                spacing: 10.w,
+                children: [
+                  Row(
+                    spacing: 10.w,
+                    children: [
+                      _homeCards(AppAssets.sendMony, "Send money", "Take acc to acc"),
+                      _homeCards(AppAssets.walletHome, "Pay the bill", "Lorem ipsum"),
+                    ],
+                  ),
+                  Row(
+                    spacing: 10.w,
+                    children: [
+                      _homeCards(AppAssets.sendMony, "Request", "Lorem ipsum"),
+                      _homeCards(AppAssets.humans, "Contact", "Lorem ipsum"),
+                    ],
+                  ),
+                ],
+              ),
+              
+            ],
+          ),
         ),
       ),
     );

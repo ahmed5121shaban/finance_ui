@@ -1,7 +1,10 @@
+import 'package:finance_ui/core/screens/all-cards-screen.dart';
 import 'package:finance_ui/core/screens/home-screen.dart';
+import 'package:finance_ui/core/screens/profile-screen.dart';
 import 'package:finance_ui/core/styling/app-assets.dart';
 import 'package:finance_ui/core/styling/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class MainScreen extends StatefulWidget {
@@ -12,7 +15,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  List<Widget> screens = [
+  final List<Widget> screens = [
     HomeScreen(),
     Container(
       height: double.infinity,
@@ -32,7 +35,7 @@ class _MainScreenState extends State<MainScreen> {
     Container(
       height: double.infinity,
       width: double.infinity,
-      color: Colors.amberAccent,
+      color: const Color.fromARGB(255, 96, 255, 64),
       child: Center(
         child: Text(
           "School",
@@ -44,43 +47,16 @@ class _MainScreenState extends State<MainScreen> {
         ),
       ),
     ),
-    Container(
-      height: double.infinity,
-      width: double.infinity,
-      color: Colors.greenAccent,
-      child: Center(
-        child: Text(
-          "Business",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-      ),
-    ),
-    Container(
-      height: double.infinity,
-      width: double.infinity,
-      color: Colors.amberAccent,
-      child: Center(
-        child: Text(
-          "School",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-      ),
-    ),
+    AllCardsScreen(),
+    ProfileScreen(),
   ];
   int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        // type: BottomNavigationBarType.fixed,
+        bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         onTap: (index) {
           setState(() {
@@ -89,41 +65,71 @@ class _MainScreenState extends State<MainScreen> {
         },
         items: [
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(AppAssets.home),
+            icon: SvgPicture.asset(
+              AppAssets.home,
+              colorFilter: ColorFilter.mode(
+                _selectedIndex == 0 ? AppColors.primary : AppColors.gray,
+                BlendMode.srcIn,
+              ),
+            ),
             label: "Home",
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(AppAssets.chart),
+            icon: SvgPicture.asset(
+              AppAssets.chart,
+              colorFilter: ColorFilter.mode(
+                _selectedIndex == 1 ? AppColors.primary : AppColors.gray,
+                BlendMode.srcIn,
+              ),
+            ),
             label: "Business",
           ),
           BottomNavigationBarItem(
             icon: Container(
-              height: 24,
-              width: 24,
+              width: 56.w,
+              height: 56.w,
               decoration: BoxDecoration(
                 color: AppColors.primary,
-                borderRadius: BorderRadius.circular(50),
+                shape: BoxShape.circle,
               ),
-              child: SvgPicture.asset(AppAssets.vector),
+              child: Center(
+                child: SvgPicture.asset(
+                  AppAssets.vector,
+                  width: 24.w,
+                  height: 24.h,
+                  colorFilter: const ColorFilter.mode(
+                    Colors.white,
+                    BlendMode.srcIn,
+                  ),
+                ),
+              ),
             ),
-            label: "School",
+            label: "",
           ),
+
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(AppAssets.wallet),
+            icon: SvgPicture.asset(
+              AppAssets.wallet,
+              colorFilter: ColorFilter.mode(
+                _selectedIndex == 3 ? AppColors.primary : AppColors.gray,
+                BlendMode.srcIn,
+              ),
+            ),
             label: "Business",
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(AppAssets.profile),
+            icon: SvgPicture.asset(
+              AppAssets.profile,
+              colorFilter: ColorFilter.mode(
+                _selectedIndex == 4 ? AppColors.primary : AppColors.gray,
+                BlendMode.srcIn,
+              ),
+            ),
             label: "School",
           ),
         ],
       ),
-      body: Container(
-        width: double.infinity,
-        child: Center(child: screens[_selectedIndex]),
-      ),
+      body: IndexedStack(index: _selectedIndex, children: screens),
     );
   }
 }
-
-

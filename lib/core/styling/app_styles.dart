@@ -144,4 +144,11 @@ class AppStyles {
     fontFamily: AppFonts.mainFont,
   );
 
+  static final TextStyle white24w600 = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.white,
+    fontFamily: AppFonts.mainFont,
+  );
+
 }

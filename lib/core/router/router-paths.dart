@@ -9,4 +9,5 @@ class RouterPaths {
   static const String otpVerification = "/otpVerification";
   static const String screens = "/screens";
   static const String home = "/home";
+  static const String profile = "/profile";
 }
