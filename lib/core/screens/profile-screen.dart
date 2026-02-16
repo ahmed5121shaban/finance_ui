@@ -86,9 +86,7 @@ Widget _homeScreenHeader(BuildContext context) {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SvgPicture.asset(width: 5.w, height: 5.h, AppAssets.dot),
-              SvgPicture.asset(width: 5.w, height: 5.h, AppAssets.dot),
-              SvgPicture.asset(width: 5.w, height: 5.h, AppAssets.dot),
+              SvgPicture.asset(width: 25.w, height: 25.h, AppAssets.editShape)
             ],
           ),
         ),

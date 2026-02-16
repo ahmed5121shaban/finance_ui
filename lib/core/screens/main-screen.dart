@@ -1,6 +1,7 @@
 import 'package:finance_ui/core/screens/all-cards-screen.dart';
 import 'package:finance_ui/core/screens/home-screen.dart';
 import 'package:finance_ui/core/screens/profile-screen.dart';
+import 'package:finance_ui/core/screens/statestics-screen.dart';
 import 'package:finance_ui/core/styling/app-assets.dart';
 import 'package:finance_ui/core/styling/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -17,25 +18,11 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   final List<Widget> screens = [
     HomeScreen(),
+    StatesticsScreen(),
     Container(
       height: double.infinity,
       width: double.infinity,
-      color: Colors.greenAccent,
-      child: Center(
-        child: Text(
-          "Business",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-      ),
-    ),
-    Container(
-      height: double.infinity,
-      width: double.infinity,
-      color: const Color.fromARGB(255, 96, 255, 64),
+      color: const Color.fromARGB(255, 69, 3, 120),
       child: Center(
         child: Text(
           "School",

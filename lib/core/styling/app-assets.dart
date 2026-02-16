@@ -21,4 +21,5 @@ class AppAssets {
   static const String leftArrow = "assets/images/left-arrow.svg";
   static const String dot = "assets/images/dot.svg";
   static const String visa = "assets/images/visa.svg";
+  static const String editShape = "assets/images/edit-shape.svg";
 }

@@ -1,4 +1,5 @@
 import 'package:finance_ui/core/router/router-paths.dart';
+import 'package:finance_ui/core/screens/all-cards-screen.dart';
 import 'package:finance_ui/core/screens/create-new-password-screen.dart';
 import 'package:finance_ui/core/screens/forgot-password-screen.dart';
 import 'package:finance_ui/core/screens/on-boarding-screen.dart';
@@ -10,6 +11,7 @@ import 'package:finance_ui/core/screens/password-changed-screen.dart';
 import 'package:finance_ui/core/screens/profile-screen.dart';
 import 'package:finance_ui/core/screens/register-screen.dart';
 import 'package:finance_ui/core/screens/screens.dart';
+import 'package:finance_ui/core/screens/statestics-screen.dart';
 import 'package:go_router/go_router.dart';
 
 class RouterGenerator {
@@ -56,6 +58,14 @@ class RouterGenerator {
       GoRoute(
         path: RouterPaths.profile,
         builder: (context, state) => const ProfileScreen(),
+      ),
+      GoRoute(
+        path: RouterPaths.allCards,
+        builder: (context, state) => const AllCardsScreen(),
+      ),
+      GoRoute(
+        path: RouterPaths.statestics,
+        builder: (context, state) => const StatesticsScreen(),
       ),
     ],
   );

@@ -10,4 +10,6 @@ class RouterPaths {
   static const String screens = "/screens";
   static const String home = "/home";
   static const String profile = "/profile";
+  static const String allCards = "/allCards";
+  static const String statestics = "/statestics";
 }
