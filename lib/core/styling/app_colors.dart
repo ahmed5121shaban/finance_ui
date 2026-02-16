@@ -16,4 +16,5 @@ class AppColors {
   static final Color carousalPrimaryColor = const Color(0xff6981fd);
   static final Color grayWhite = const Color(0xffFDFDFD);
   static final Color grayBlack = const Color(0xff123333);
+  static final Color grayLight = const Color(0xffF2F2F5);
 }

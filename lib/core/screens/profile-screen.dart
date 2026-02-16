@@ -4,6 +4,7 @@ import 'package:finance_ui/core/styling/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -22,12 +23,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
           child: Column(
             children: [
               _homeScreenHeader(context),
+              SizedBox(height: 40.h),
+              ClipOval(
+                child: Image.asset(
+                  AppAssets.profileImage,
+                  width: 100.w,
+                  height: 100.h,
+                  fit: BoxFit.cover,
+                ),
+              ),
               SizedBox(height: 20.h),
-              Image.asset(
-                AppAssets.profileImage,
-                width: 100.w,
-                height: 100.h,
-              )
+              _textFieldsGroups("Full Name", "Ahmed Shaban"),
+              SizedBox(height: 20.h),
+              _textFieldsGroups("Email", "[EMAIL_ADDRESS]"),
+              SizedBox(height: 20.h),
+              _textFieldsGroups("Phone", "01000000000"),
+              SizedBox(height: 20.h),
+              _textFieldsGroups("Address", "123 Main St"),
             ],
           ),
         ),
@@ -40,18 +52,23 @@ Widget _homeScreenHeader(BuildContext context) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
-      Container(
-        width: 48.w,
-        height: 48.h,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50),
-          border: Border.all(color: AppColors.lightGray),
-        ),
-        child: Center(
-          child: SvgPicture.asset(
-            width: 20.w,
-            height: 17.h,
-            AppAssets.leftArrow,
+      InkWell(
+        onTap: () {
+          GoRouter.of(context).pop();
+        },
+        child: Container(
+          width: 48.w,
+          height: 48.h,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(50),
+            border: Border.all(color: AppColors.lightGray),
+          ),
+          child: Center(
+            child: SvgPicture.asset(
+              width: 20.w,
+              height: 17.h,
+              AppAssets.leftArrow,
+            ),
           ),
         ),
       ),
@@ -76,6 +93,19 @@ Widget _homeScreenHeader(BuildContext context) {
           ),
         ),
       ),
+    ],
+  );
+}
+
+Widget _textFieldsGroups(String label,String value) {
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Text(label, style: AppStyles.darkGray14w600),
+      SizedBox(height: 20.h),
+      Text(value, style: AppStyles.bodyMain),
+      Divider(color: AppColors.grayLight,thickness: 1.w,),
     ],
   );
 }
